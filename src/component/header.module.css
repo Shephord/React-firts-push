@@ -1,9 +1,10 @@
 .header {
-   grid-area: header;
-   background-color: rgb(21, 22, 37);
- }
- 
- .logo {
-   color: #f8f9d6;
- }
- 
+  grid-area: header;
+  background-color: rgb(21, 22, 37);
+}
+
+.logo {
+  color: #f8f9d6;
+  margin-left: 20px;
+}
+
