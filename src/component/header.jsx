@@ -1,11 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-regular-svg-icons";
- import './header.css'
+ import classes from './header.module.css'
 function Header() {
   return (
-    <header className='header'>
+    <header className={classes.header}>
       
-      <FontAwesomeIcon icon={faEye} inverse size="3x" className="header-logo"/>
+      <FontAwesomeIcon icon={faEye} inverse size="3x" className={classes.logo}/>
     </header>
   );
 }

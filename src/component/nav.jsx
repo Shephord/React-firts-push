@@ -1,31 +1,33 @@
-import './nav.css'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faUser, faMessage,faNewspaper,faMusic,faGear } from "@fortawesome/free-solid-svg-icons";
+import classes from "./nav.module.css";
 function Nav() {
   return (
-    <nav className='nav'>
-      <div className='nav-item'>
+    <nav className={classes.nav}>
+      <div className={classes.item}>
         {" "}
         <a alt='#f' href='#f'>
-          Profile
+        <FontAwesomeIcon icon={faUser} />  Profile
         </a>
       </div>
-      <div className='nav-item'>
+      <div className={classes.item}>
         <a alt='#f' href='#f'>
-          Messages
+        <FontAwesomeIcon icon={faMessage} />  Messages
         </a>
       </div>
-      <div className='nav-item'>
+      <div className={classes.item}>
         <a alt='#f' href='#f'>
-          News
+        <FontAwesomeIcon icon={faNewspaper} /> News
         </a>
       </div>
-      <div className='nav-item'>
+      <div className={classes.item}>
         <a alt='#f' href='#f'>
-          Music
+        <FontAwesomeIcon icon={faMusic} />  Music
         </a>
       </div>
-      <div className='nav-item'>
+      <div className={classes.item}>
         <a alt='#f' href='#f'>
-          Settings
+        <FontAwesomeIcon icon={faGear} /> Settings
         </a>
       </div>
     </nav>

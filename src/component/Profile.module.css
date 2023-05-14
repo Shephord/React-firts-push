@@ -4,11 +4,19 @@
   color: #ff5e00;
 }
 
-.content-background {
+.background {
   width: 1200px;
   height: 300px;
 }
 
-.content-profile__img {
+.profile {
   width: 300px;
+}
+
+.active:hover {
+  color: #fff;
+}
+
+.post {
+  padding: 10px;
 }
