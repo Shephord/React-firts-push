@@ -1,0 +1,14 @@
+.content {
+  grid-area: content;
+  background-color: rgb(21, 22, 37);
+  color: #ff5e00;
+}
+
+.content-background {
+  width: 1200px;
+  height: 300px;
+}
+
+.content-profile__img {
+  width: 300px;
+}
