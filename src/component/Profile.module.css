@@ -1,0 +1,39 @@
+.content {
+  grid-area: content;
+  background-color: rgb(21, 22, 37);
+  color: #ff5e00;
+}
+
+.background {
+  width: 1200px;
+  height: 300px;
+}
+.profile {
+  display: flex;
+  font-size: 18px;
+}
+.profile__img {
+  width: 200px;
+  margin-top: 30px;
+}
+.profile_content div,
+.profile_content h2 {
+  margin-left: 50px;
+}
+
+
+.profile_content div a {
+  text-decoration: none;
+  color: #09d3f7;
+}
+.profile_content p a:hover {
+  color: #fff;
+}
+
+.active:hover {
+  color: #fff;
+}
+
+.post {
+  padding: 10px;
+}

@@ -9,37 +9,6 @@
   width: 1200px;
   margin: 0 auto;
 }
-/* HEADER */
-.header {
-  grid-area: header;
-  background-color: rgb(21, 22, 37);
-}
 
-.header .fa-eye {
-  color: #F8F9D6;
-}
-
-/* NAV */
-.nav {
-  grid-area: nav;
-  background-color: rgb(21, 22, 37);
-}
-.nav div a {
-  color: #ff5e00;
-}
 
 /* CONTENT */
-.content {
-  grid-area: content;
-  background-color: rgb(21, 22, 37);
-  color: #ff5e00;
-}
-
-.content-background {
-  width: 1200px;
-  height: 300px;
-}
-
-.content-profile-img {
-  width: 300px;
-}
