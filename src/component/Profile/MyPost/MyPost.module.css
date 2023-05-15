@@ -1,0 +1,12 @@
+
+.post {
+  padding: 10px;
+  margin-left: 50px;
+}
+.input input {
+  width: 800px;
+  height: 40px;
+  font-size: 20px;
+  border: none;
+  position: relative;
+}

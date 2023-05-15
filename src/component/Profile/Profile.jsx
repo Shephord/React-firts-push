@@ -1,4 +1,5 @@
 import classes from "./Profile.module.css";
+import Post from "./MyPost/MyPost"
 function Profile() {
   return (
     <div className={classes.content}>
@@ -33,22 +34,7 @@ function Profile() {
           </div>
         </div>
       </div>
-      <div className={classes.post}>
-        <h2>My post</h2>
-        <div className={classes.input}>
-          <input value="what's new?" />
-        </div>
-
-        <button className={classes.button}>Send</button>
-        <div>
-          <div>post 1</div>
-          <div>post 2</div>
-
-          <div>post 3</div>
-
-          <div>post 4</div>
-        </div>
-      </div>
+      <Post />
     </div>
   );
 }
