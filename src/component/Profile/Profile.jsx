@@ -23,19 +23,23 @@ function Profile() {
             Birth Day: <spam>09/12/1994</spam>
           </div>
           <div>
-           City: <spam>Venice</spam>
+            City: <spam>Venice</spam>
           </div>
           <div>
             Education: <spam>BSU'11</spam>
           </div>
           <div>
-            WEB Site: <a href="https://google.com">Google</a>
+            WEB Site: <a href='https://google.com'>Google</a>
           </div>
         </div>
       </div>
-      <div>
-        My post
-        <div className={`${classes.post} ${classes.active} `}>new Post</div>
+      <div className={classes.post}>
+        <h2>My post</h2>
+        <div className={classes.input}>
+          <input value="what's new?" />
+        </div>
+
+        <button className={classes.button}>Send</button>
         <div>
           <div>post 1</div>
           <div>post 2</div>

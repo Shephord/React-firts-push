@@ -11,6 +11,7 @@
 .profile {
   display: flex;
   font-size: 18px;
+  margin-left: 50px;
 }
 .profile__img {
   width: 200px;
@@ -20,7 +21,6 @@
 .profile_content h2 {
   margin-left: 50px;
 }
-
 
 .profile_content div a {
   text-decoration: none;
@@ -36,4 +36,12 @@
 
 .post {
   padding: 10px;
+  margin-left: 50px;
+}
+.input input {
+  width: 800px;
+  height: 40px;
+  font-size: 20px;
+  border: none;
+  position: relative;
 }
