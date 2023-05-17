@@ -2,6 +2,7 @@
    grid-area: nav;
    background-color: rgb(21, 22, 37);
    width: 12em ;
+   height: 100vh ;
  }
  .item{
   margin-top: 6px;

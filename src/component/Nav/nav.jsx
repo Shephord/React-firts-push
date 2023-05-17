@@ -12,27 +12,27 @@ function Nav() {
     <nav className={classes.nav}>
       <div className={classes.item}>
         {" "}
-        <a href='#f'>
+        <a href='/profile'>
           <FontAwesomeIcon icon={faUser} /> Profile
         </a>
       </div>
       <div className={classes.item}>
-        <a href='#f'>
+        <a href='/dialogs'>
           <FontAwesomeIcon icon={faMessage} /> Messages
         </a>
       </div>
       <div className={classes.item}>
-        <a href='#f'>
+        <a href='/news'>
           <FontAwesomeIcon icon={faNewspaper} /> News
         </a>
       </div>
       <div className={classes.item}>
-        <a href='#f'>
+        <a href='/music'>
           <FontAwesomeIcon icon={faMusic} /> Music
         </a>
       </div>
       <div className={classes.item}>
-        <a href='#f'>
+        <a href='/settings'>
           <FontAwesomeIcon icon={faGear} /> Settings
         </a>
       </div>
