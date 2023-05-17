@@ -1,0 +1,11 @@
+.post img {
+  border-radius: 50%;
+  width: 50px;
+}
+
+.post div svg {
+  color: #fff;
+}
+.post div svg:hover {
+  color: red;
+}

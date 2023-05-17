@@ -11,6 +11,7 @@
 .profile {
   display: flex;
   font-size: 18px;
+  margin-left: 50px;
 }
 .profile__img {
   width: 200px;
@@ -21,7 +22,6 @@
   margin-left: 50px;
 }
 
-
 .profile_content div a {
   text-decoration: none;
   color: #09d3f7;
@@ -30,10 +30,3 @@
   color: #fff;
 }
 
-.active:hover {
-  color: #fff;
-}
-
-.post {
-  padding: 10px;
-}

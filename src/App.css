@@ -11,4 +11,8 @@
 }
 
 
-/* CONTENT */
+.content {
+  grid-area: content;
+  background-color: rgb(21, 22, 37);
+  color: #ff5e00;
+}

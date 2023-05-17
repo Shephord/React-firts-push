@@ -1,4 +1,5 @@
 import classes from "./Profile.module.css";
+import Post from "./MyPost/MyPost"
 function Profile() {
   return (
     <div className={classes.content}>
@@ -23,28 +24,17 @@ function Profile() {
             Birth Day: <spam>09/12/1994</spam>
           </div>
           <div>
-           City: <spam>Venice</spam>
+            City: <spam>Venice</spam>
           </div>
           <div>
             Education: <spam>BSU'11</spam>
           </div>
           <div>
-            WEB Site: <a href="https://google.com">Google</a>
+            WEB Site: <a href='https://google.com'>Google</a>
           </div>
         </div>
       </div>
-      <div>
-        My post
-        <div className={`${classes.post} ${classes.active} `}>new Post</div>
-        <div>
-          <div>post 1</div>
-          <div>post 2</div>
-
-          <div>post 3</div>
-
-          <div>post 4</div>
-        </div>
-      </div>
+      <Post />
     </div>
   );
 }
