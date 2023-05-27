@@ -7,34 +7,36 @@ import {
   faGear,
 } from "@fortawesome/free-solid-svg-icons";
 import classes from "./nav.module.css";
+import { NavLink } from "react-router-dom";
 function Nav() {
+  const setActive = ({ isActive }) => (isActive ? classes.activeLink : "");
   return (
     <nav className={classes.nav}>
       <div className={classes.item}>
         {" "}
-        <a href='/profile'>
+        <NavLink to='/profile' className={setActive}>
           <FontAwesomeIcon icon={faUser} /> Profile
-        </a>
+        </NavLink>
       </div>
       <div className={classes.item}>
-        <a href='/dialogs'>
+        <NavLink to='/dialogs' className={setActive}>
           <FontAwesomeIcon icon={faMessage} /> Messages
-        </a>
+        </NavLink>
       </div>
       <div className={classes.item}>
-        <a href='/news'>
+        <NavLink to='/news' className={setActive}>
           <FontAwesomeIcon icon={faNewspaper} /> News
-        </a>
+        </NavLink>
       </div>
       <div className={classes.item}>
-        <a href='/music'>
+        <NavLink to='/music' className={setActive}>
           <FontAwesomeIcon icon={faMusic} /> Music
-        </a>
+        </NavLink>
       </div>
       <div className={classes.item}>
-        <a href='/settings'>
+        <NavLink to='/settings' className={setActive}>
           <FontAwesomeIcon icon={faGear} /> Settings
-        </a>
+        </NavLink>
       </div>
     </nav>
   );

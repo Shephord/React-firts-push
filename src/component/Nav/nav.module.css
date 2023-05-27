@@ -1,26 +1,30 @@
 .nav {
-   grid-area: nav;
-   background-color: rgb(21, 22, 37);
-   width: 12em ;
-   height: 100vh ;
- }
- .item{
+  grid-area: nav;
+  background-color: rgb(21, 22, 37);
+  width: 12em;
+  height: 100vh;
+}
+.item {
   margin-top: 6px;
   font-size: 18px;
   margin-left: 10px;
- }
+}
 
- .item:last-child{
+.item:last-child {
   margin-top: 20px;
- }
- .item a{
-   color: #ff5e00;
-   text-decoration: none;
- }
+}
+.item a {
+  color: #ff5e00;
+  text-decoration: none;
+}
 
- .item a:hover {
+.item a:hover {
   color: #fff;
- }
+}
 .item a svg {
- margin-right:5px;
+  margin-right: 5px;
+}
+
+a.activeLink {
+  color: #fff;
 }

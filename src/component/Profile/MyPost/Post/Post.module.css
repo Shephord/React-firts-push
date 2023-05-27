@@ -3,8 +3,9 @@
   width: 50px;
 }
 
-.post div svg {
+.post div svg, .post div div  {
   color: #fff;
+  margin-left: 15px;
 }
 .post div svg:hover {
   color: red;
