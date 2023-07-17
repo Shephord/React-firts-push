@@ -1,8 +1,8 @@
 import classes from "./Dialogs.module.css";
 import Dialog from "./Dialog/Dialog";
 import Message from "./Message/Message";
-import DialogsData from "./Data/DialogsData";
-import MessagesData from "./Data/MessagesData";
+import DialogsData from "../Date/DialogsData/DialogsData";
+import MessagesData from "../Date/DialogsData/MessagesData";
 
 function Dialogs(props) {
   return (

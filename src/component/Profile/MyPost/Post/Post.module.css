@@ -3,10 +3,18 @@
   width: 50px;
 }
 
-.post div svg, .post div div  {
+.post div svg,
+.post div div {
   color: #fff;
   margin-left: 15px;
 }
 .post div svg:hover {
   color: red;
+}
+.message {
+  color: #fff;
+}
+
+.name {
+  font-size: 20px;
 }

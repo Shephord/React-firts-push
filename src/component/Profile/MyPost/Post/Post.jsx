@@ -9,9 +9,8 @@ function Post(props) {
         src='https://i0.wp.com/newdoorfiji.com/wp-content/uploads/2018/03/profile-img-1.jpg?ssl=1'
         alt='#'
       />
-      <span>
-        {props.name}: {props.message}
-      </span>{" "}
+      <span className={classes.name}>{props.name}: </span>
+      <span className={classes.message}>{props.message}</span>
       <div>
         <span>
           <FontAwesomeIcon icon={faHeart} />
