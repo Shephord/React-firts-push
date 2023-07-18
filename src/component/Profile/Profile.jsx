@@ -1,7 +1,7 @@
 import classes from "./Profile.module.css";
 import Post from "./MyPost/MyPost";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
-import ProfileData from "../Date/PostDate/ProfileData";
+import ProfileData from "../Date/ProfileDate/ProfileData";
 
 function Profile() {
   return (
