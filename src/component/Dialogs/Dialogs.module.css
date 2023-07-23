@@ -1,6 +1,15 @@
 .dialogs {
   display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  justify-content: center;
+  align-items: start;
+  height: 100vh;
+}
+.dialogs_item {
+  display: grid;
   grid-template-columns: 2fr 10fr;
+  gap: 10px;
 }
 
 .dialogs_messages {
@@ -9,3 +18,17 @@
 .message {
   padding: 10px;
 }
+.dialogs_input {
+  
+  grid-column: 1/-1;
+  text-align: center;
+}
+.dialogs_input input {
+  width: 900px;
+  height: 50px;
+  font-size: 20px;
+ }
+ .dialogs_input button {
+  height: 50px;
+  font-size: 20px;
+ }

@@ -1,10 +1,18 @@
-
+.dialog  {
+  margin: 10px 0 0 10px;
+}
 .dialog a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   text-decoration: none;
   color: #ff5e00;
+  
+  
 }
 
 .img {
   width: 100px;
   border-radius: 50px;
+  margin-right: 10px;
 }

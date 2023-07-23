@@ -48,14 +48,14 @@ a.activeLink {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 10px; /* Пространство между элементами */
+  margin-right: 10px; 
   cursor: pointer;
 }
 .friend:hover {
   color: #fff;
 }
 .friend:last-child {
-  margin-right: 0; /* Убираем правое пространство у последнего элемента */
+  margin-right: 0; 
 }
 
 .friend img {
