@@ -1,4 +1,22 @@
+.dialogs_messages {
+  background-color: #ccc;
+  color: #000;
+}
+
 .message {
    padding: 10px;
+   display:  grid;
+   grid-template-columns: repeat(2,1fr);
+   gap: 10px;
+  
  }
  
+ .user {
+ padding: 10px;
+ 
+ }
+
+ .img {
+  width: 50px;
+  border-radius: 60px;
+ }

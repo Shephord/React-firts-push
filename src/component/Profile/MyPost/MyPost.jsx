@@ -1,7 +1,7 @@
 import classes from "./MyPost.module.css";
 import Post from "./Post/Post";
-import PostData from "../../Date/ProfileDate/PostDate";
-function MyPost() {
+
+function MyPost(props) {
   return (
     <div className={classes.post}>
       <h2>My post</h2>
@@ -10,13 +10,8 @@ function MyPost() {
       </div>
 
       <button className={classes.button}>Send</button>
-      {PostData.map((post) => (
-        <Post
-          like={post.like}
-          name={post.name}
-          message={post.message}
-          
-        />
+      {props.posts.map((post) => (
+        <Post like={post.like} name={post.name} message={post.message} />
       ))}
     </div>
   );

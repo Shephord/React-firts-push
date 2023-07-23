@@ -1,9 +1,8 @@
 import classes from "./Profile.module.css";
 import Post from "./MyPost/MyPost";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
-import ProfileData from "../Date/ProfileDate/ProfileData";
 
-function Profile() {
+function Profile(props) {
   return (
     <div className={classes.content}>
       <div>
@@ -14,15 +13,9 @@ function Profile() {
         />
       </div>
       <ProfileInfo
-        name={ProfileData.name}
-        lasName={ProfileData.lasName}
-        birthDay={ProfileData.birthDay}
-        city={ProfileData.city}
-        Education={ProfileData.Education}
-        WebSite={ProfileData.WebSite}
-        profileImg={ProfileData.profileImg}
+        profile={props.profile}
       />
-      <Post />
+      <Post posts={props.posts}  />
     </div>
   );
 }

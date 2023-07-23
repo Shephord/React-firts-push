@@ -1,42 +1,33 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faUser,
-  faMessage,
-  faNewspaper,
-  faMusic,
-  faGear,
-} from "@fortawesome/free-solid-svg-icons";
 import classes from "./nav.module.css";
 import { NavLink } from "react-router-dom";
-function Nav() {
+function Nav(props) {
   const setActive = ({ isActive }) => (isActive ? classes.activeLink : "");
   return (
     <nav className={classes.nav}>
-      <div className={classes.item}>
-        {" "}
-        <NavLink to='/profile' className={setActive}>
-          <FontAwesomeIcon icon={faUser} /> Profile
-        </NavLink>
-      </div>
-      <div className={classes.item}>
-        <NavLink to='/dialogs' className={setActive}>
-          <FontAwesomeIcon icon={faMessage} /> Messages
-        </NavLink>
-      </div>
-      <div className={classes.item}>
-        <NavLink to='/news' className={setActive}>
-          <FontAwesomeIcon icon={faNewspaper} /> News
-        </NavLink>
-      </div>
-      <div className={classes.item}>
-        <NavLink to='/music' className={setActive}>
-          <FontAwesomeIcon icon={faMusic} /> Music
-        </NavLink>
-      </div>
-      <div className={classes.item}>
-        <NavLink to='/settings' className={setActive}>
-          <FontAwesomeIcon icon={faGear} /> Settings
-        </NavLink>
+      {props.item.map((el, index) => (
+        <div
+          key={index}
+          className={`${classes.item} ${
+            index === props.item.length - 1 ? classes.last : ""
+          }`}
+        >
+          {" "}
+          <NavLink to={el.pageUrl} className={setActive}>
+            <FontAwesomeIcon icon={el.PageIcon} /> {el.PageName}
+          </NavLink>
+        </div>
+      ))}
+
+      <div className={classes.friends}>
+        <div className={classes.activeFriends}>
+          {props.friends.map((el) => (
+            <div key={el.name} className={classes.friend}>
+              <img className={classes.img} src={el.imgUrl} alt='#' />
+              <span>{el.name}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </nav>
   );
