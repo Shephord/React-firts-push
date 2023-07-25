@@ -34,6 +34,7 @@ function App(props) {
               <Profile
                 profile={ProfilePage.Profile}
                 posts={ProfilePage.Posts}
+                addPost={props.addPost}
               />
             }
           />

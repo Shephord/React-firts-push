@@ -1,5 +1,5 @@
 import classes from "./Profile.module.css";
-import Post from "./MyPost/MyPost";
+import MyPost from "./MyPost/MyPost";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 function Profile(props) {
@@ -15,7 +15,7 @@ function Profile(props) {
       <ProfileInfo
         profile={props.profile}
       />
-      <Post posts={props.posts}  />
+      <MyPost posts={props.posts}  addPost={props.addPost}/>
     </div>
   );
 }

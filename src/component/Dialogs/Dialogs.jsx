@@ -1,8 +1,14 @@
 import classes from "./Dialogs.module.css";
 import Dialog from "./Dialog/Dialog";
 import Message from "./Message/Message";
+import { useRef } from "react";
 
 function Dialogs(props) {
+  let newMessageElement = useRef()
+  const sendMessage = () => {
+   let res =  newMessageElement.current.value
+    console.log(res);
+  }
   return (
     <div className={`${classes.dialogs}  ${"content"}`}>
       {" "}
@@ -19,8 +25,8 @@ function Dialogs(props) {
         </div>
       </div>
       <div className={classes.dialogs_input}>
-        <input type='text' />
-        <button>Send</button>
+        <input type='text' ref={newMessageElement} />
+        <button onClick={sendMessage}>Send</button>
       </div>
     </div>
   );

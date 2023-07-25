@@ -1,4 +1,3 @@
-
 import {
   faUser,
   faMessage,
@@ -88,17 +87,23 @@ let state = {
         PageName: "Profile",
         PageIcon: faUser,
       },
-      { pageUrl: "/dialogs", PageName: "Dialogs",
-      PageIcon: faMessage, },
-      { pageUrl: "/news", PageName: "News",
-      PageIcon: faNewspaper, },
-      { pageUrl: "/music", PageName: "Music",
-      PageIcon: faMusic, },
-      { pageUrl: "/settings", PageName: "Settings" ,
-      PageIcon: faGear,},
-      { pageUrl: "/friends", PageName: "Friends",
-      PageIcon: faUserGroup, },
+      { pageUrl: "/dialogs", PageName: "Dialogs", PageIcon: faMessage },
+      { pageUrl: "/news", PageName: "News", PageIcon: faNewspaper },
+      { pageUrl: "/music", PageName: "Music", PageIcon: faMusic },
+      { pageUrl: "/settings", PageName: "Settings", PageIcon: faGear },
+      { pageUrl: "/friends", PageName: "Friends", PageIcon: faUserGroup },
     ],
   },
 };
+
+let addPost = (postMessage,) => {
+  let newPost = {
+    like: 1,
+    message: postMessage,
+    name: 'Mops',
+  };
+  state.ProfilePage.Posts.push(newPost);
+};
+
+export { addPost };
 export default state;
