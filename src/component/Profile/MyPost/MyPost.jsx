@@ -2,12 +2,12 @@ import { useRef } from "react";
 import classes from "./MyPost.module.css";
 import Post from "./Post/Post";
 
-
 function MyPost(props) {
-  let newPostElement = useRef('input');
+  let newPostElement = useRef("input");
   let addPost = () => {
     let text = newPostElement.current.value;
-    props.addPost(text)
+    props.addPost(text);
+    newPostElement.current.value = "";
   };
   return (
     <div className={classes.post}>

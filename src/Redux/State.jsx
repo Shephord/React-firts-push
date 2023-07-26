@@ -6,6 +6,7 @@ import {
   faGear,
   faUserGroup,
 } from "@fortawesome/free-solid-svg-icons";
+import { render } from "../Render";
 let state = {
   ProfilePage: {
     Profile: {
@@ -96,13 +97,14 @@ let state = {
   },
 };
 
-let addPost = (postMessage,) => {
+let addPost = (postMessage) => {
   let newPost = {
     like: 1,
     message: postMessage,
-    name: 'Mops',
+    name: "Mops",
   };
   state.ProfilePage.Posts.push(newPost);
+  render(state);
 };
 
 export { addPost };
