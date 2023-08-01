@@ -9,7 +9,6 @@ const Message = (props) => {
           <div>user 1 {props.message}</div>
         </div>
         <div className={classes.user}>
-          <img className={classes.img} src={props.url} alt='user2Img' />
           <div>user 2 {props.message}</div>
         </div>
       </div>

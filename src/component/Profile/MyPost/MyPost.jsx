@@ -5,15 +5,21 @@ import Post from "./Post/Post";
 function MyPost(props) {
   let newPostElement = useRef("input");
   let addPost = () => {
+    props.addPost();
+  };
+  let onPostCheng = () => {
     let text = newPostElement.current.value;
-    props.addPost(text);
-    newPostElement.current.value = "";
+    props.updateNewPostText(text);
   };
   return (
     <div className={classes.post}>
       <h2>My post</h2>
       <div className={classes.input}>
-        <input ref={newPostElement} />
+        <input
+          onChange={onPostCheng}
+          ref={newPostElement}
+          value={props.newPostText}
+        />
       </div>
 
       <button className={classes.button} onClick={addPost}>

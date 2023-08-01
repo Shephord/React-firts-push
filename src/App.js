@@ -11,7 +11,7 @@ import Friends from "./component/Friends/Friends";
 
 function App(props) {
   const { appState } = props;
-  const { DialogsPage, ProfilePage, nav } = appState;
+  const { DialogsPage, ProfilePage, nav, Icon } = appState;
 
   return (
     <Router>
@@ -25,6 +25,7 @@ function App(props) {
               <Dialogs
                 dialogs={DialogsPage.Dialogs}
                 messages={DialogsPage.Messages}
+                buttonIcon={Icon.buttonIcon}
               />
             }
           />
@@ -35,6 +36,8 @@ function App(props) {
                 profile={ProfilePage.Profile}
                 posts={ProfilePage.Posts}
                 addPost={props.addPost}
+                newPostText={ProfilePage.newPostText}
+                updateNewPostText={props.updateNewPostText}
               />
             }
           />

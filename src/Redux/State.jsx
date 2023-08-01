@@ -5,9 +5,14 @@ import {
   faMusic,
   faGear,
   faUserGroup,
+  faPaperPlane,
 } from "@fortawesome/free-solid-svg-icons";
 import { render } from "../Render";
 let state = {
+  Icon: {
+
+      buttonIcon: faPaperPlane, 
+  },
   ProfilePage: {
     Profile: {
       name: "Andrei",
@@ -26,6 +31,7 @@ let state = {
       { like: "11", name: "Avrora", message: "Monday is a greet day " },
       { like: "12", name: "Alma", message: "Monday is a greet day " },
     ],
+    newPostText: "how are you?",
   },
   DialogsPage: {
     Dialogs: [
@@ -63,6 +69,7 @@ let state = {
         message: "can we go tomorrow to cinema",
       },
     ],
+    newMessage: "Send a message",
   },
   nav: {
     Friends: [
@@ -96,16 +103,31 @@ let state = {
     ],
   },
 };
-
-let addPost = (postMessage) => {
+window.state = state;
+// Profile page Function adding and update Post
+let addPost = () => {
   let newPost = {
     like: 1,
-    message: postMessage,
+    message: state.ProfilePage.newPostText,
     name: "Mops",
   };
   state.ProfilePage.Posts.push(newPost);
+  state.ProfilePage.newPostText = "";
   render(state);
 };
 
-export { addPost };
+let updateNewPostText = (newText) => {
+  state.ProfilePage.newPostText = newText;
+  render(state);
+};
+// Dialogs new Message
+let addMessage = () => {
+  let newMessage = {
+    message: state.DialogsPage.newMessage,
+  };
+  state.DialogsPage.Messages.push(newMessage);
+  state.DialogsPage.newMessage = "";
+  render(state);
+};
+export { addPost, updateNewPostText };
 export default state;
