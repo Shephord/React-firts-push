@@ -18,21 +18,20 @@
 
 .dialogs_textarea {
   margin-right: 10px;
-  width: 790px;
+  width: 780px;
   height: 30px;
   font-size: 20px;
   resize: none;
   padding-top: 10px;
+  padding-left: 10px;
 }
 .dialogs_button {
- 
   position: absolute;
   right: 12px;
-  padding: 5px;
+  top: 3px;
   background: none;
   border: none;
   transition: background-color 0.3s;
- 
 }
 .icon {
   width: 20px;
@@ -42,7 +41,6 @@
   border-radius: 20%;
   transition: background-color ease 0.4s;
   transition: color ease 0.4s;
- 
 }
 .icon_active {
   background-color: #00fc93;

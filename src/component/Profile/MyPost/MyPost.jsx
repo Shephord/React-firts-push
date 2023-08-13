@@ -3,6 +3,10 @@ import { useRef } from "react";
 import classes from "./MyPost.module.css";
 import Post from "./Post/Post";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  addPostActionCreator,
+  upDateNewPostMessage,
+} from "../../../Redux/State";
 
 function MyPost(props) {
   const [text, setText] = useState("");
@@ -15,11 +19,11 @@ function MyPost(props) {
   };
 
   let addPost = () => {
-    props.dispatch({ type: "ADD-POST" });
+    props.dispatch(addPostActionCreator());
   };
 
   let onPostCheng = (text) => {
-    let action = { type: "UP-DATE-NEW-POST-MESSAGE", newText: text }
+    let action = upDateNewPostMessage(text);
     props.dispatch(action);
   };
   return (
@@ -27,6 +31,7 @@ function MyPost(props) {
       <h2>My post</h2>
       <div className={classes.textarea}>
         <textarea
+          placeholder="how are you?"
           onChange={handleChange}
           ref={newPostElement}
           value={props.newPostText}

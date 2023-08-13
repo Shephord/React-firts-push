@@ -8,6 +8,12 @@ import {
   faPaperPlane,
 } from "@fortawesome/free-solid-svg-icons";
 
+const UP_DATE_NEW_POST_MESSAGE = "UP-DATE-NEW-POST-MESSAGE";
+const ADD_POST = "ADD-POST";
+
+const UP_DATE_NEW_MESSAGE_BODY = "UP-DATE-NEW-MESSAGE-BODY";
+const SEND_MESSAGE = "SEND-MESSAGE";
+
 let Store = {
   _state: {
     Icon: {
@@ -31,7 +37,7 @@ let Store = {
         { like: "11", name: "Avrora", message: "Monday is a greet day " },
         { like: "12", name: "Alma", message: "Monday is a greet day " },
       ],
-      newPostText: "how are you?",
+      newPostText: "",
     },
     DialogsPage: {
       Dialogs: [
@@ -55,9 +61,21 @@ let Store = {
         {
           url: "https://www.pngitem.com/pimgs/m/348-3481514_circle-profile-girl-hd-png-download.png",
           message: "hello how are you ? ",
-          newMessage: "hi",
+          id: 1,
+        },
+        {
+          url: "https://www.pngitem.com/pimgs/m/348-3481514_circle-profile-girl-hd-png-download.png",
+          message: "hello how are you ? ",
+
+          id: 2,
+        },
+        {
+          url: "https://www.pngitem.com/pimgs/m/348-3481514_circle-profile-girl-hd-png-download.png",
+          message: "hello how are you ? ",
+          id: 3,
         },
       ],
+      newMessageBody: "",
     },
     nav: {
       Friends: [
@@ -105,42 +123,66 @@ let Store = {
 
     let newPost = {
       like: rand,
-      message: this.getState().ProfilePage.newPostText,
+      message: this._state.ProfilePage.newPostText,
       name: "Mops",
     };
-    this.getState().ProfilePage.Posts.push(newPost);
-    this.getState().ProfilePage.newPostText = "";
+    this._state.ProfilePage.Posts.push(newPost);
+    this._state.ProfilePage.newPostText = "";
     this._callSubscriber(this._state);
   },
 
   _updateNewPostText(newText) {
-    this.getState().ProfilePage.newPostText = newText;
+    this._state.ProfilePage.newPostText = newText;
     this._callSubscriber(this._state);
   },
 
   _addMessage() {
-    let newMessages = {
-      message: this.getState().DialogsPage.Messages.newMessage,
-    };
-    this.getState().DialogsPage.Messages.push(newMessages);
-    this.getState().DialogsPage.Messages.newMessage = "";
+    let body = this._state.DialogsPage.newMessageBody;
+
+    this._state.DialogsPage.Messages.push({ id: 4, message: body });
+    this._state.DialogsPage.newMessageBody = "";
     this._callSubscriber(this._state);
   },
-  _updateNewMessage(newText) {
-    this.getState().DialogsPage.Messages.newMessage = newText;
+  _updateNewMessage(body) {
+    this._state.DialogsPage.newMessageBody = body;
     this._callSubscriber(this._state);
   },
   dispatch(action) {
-    if (action.type === "ADD-POST") {
-     this._addPost();
-    } else if (action.type === "UP-DATE-NEW-POST-MESSAGE") {
-      this._updateNewPostText(action.newText)
-    }else if (action.type === "ADD-MESSAGE") {
-      this._addMessage()
-    }else if (action.type === "UP-DATE-NEW-MESSAGE") {
-      this._updateNewMessage(action.newText)
+    if (action.type === ADD_POST) {
+      this._addPost();
+    } else if (action.type === UP_DATE_NEW_POST_MESSAGE) {
+      this._updateNewPostText(action.newText);
+    } else if (action.type === SEND_MESSAGE) {
+      this._addMessage();
+    } else if (action.type === UP_DATE_NEW_MESSAGE_BODY) {
+      this._updateNewMessage(action.body);
     }
   },
+};
+export const addPostActionCreator = () => {
+  return {
+    type: ADD_POST,
+  };
+};
+
+export const upDateNewPostMessage = (text) => {
+  return {
+    type: UP_DATE_NEW_POST_MESSAGE,
+    newText: text,
+  };
+};
+
+export const sendMessageCreator = () => {
+  return {
+    type: SEND_MESSAGE,
+  };
+};
+
+export const upDateNewMessageBodyCreator = (body) => {
+  return {
+    type: UP_DATE_NEW_MESSAGE_BODY,
+    body: body,
+  };
 };
 
 export default Store;

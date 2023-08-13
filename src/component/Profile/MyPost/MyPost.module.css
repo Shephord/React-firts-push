@@ -8,13 +8,14 @@
   margin-bottom: 15px;
 }
 .textarea textarea {
-  width: 800px;
+  width: 790px;
   height: 30px;
   font-size: 20px;
   border: none;
   resize: none;
   border-radius: 5px;
   padding-top: 10px;
+  padding-left: 10px;
 }
 
 .button {
