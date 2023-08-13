@@ -1,7 +1,7 @@
 .dialogs_messages {
   background-color: #ccc;
   color: #000;
-   height: 20vh;
+   /* height: 20vh; */
    overflow: hidden;
    
 }

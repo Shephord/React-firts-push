@@ -10,22 +10,23 @@ import Settings from "./component/Settings/Settings";
 import Friends from "./component/Friends/Friends";
 
 function App(props) {
-  const { appState } = props;
-  const { DialogsPage, ProfilePage, nav, Icon } = appState;
 
   return (
     <Router>
       <div className='app-wrapper'>
         <Header />
-        <Nav friends={nav.Friends} item={nav.Item} />
+        <Nav
+          friends={props.state.nav.Friends}
+          item={props.state.nav.Item}
+        />
         <Routes>
           <Route
             path='/dialogs/*'
             element={
               <Dialogs
-                dialogs={DialogsPage.Dialogs}
-                messages={DialogsPage.Messages}
-                buttonIcon={Icon.buttonIcon}
+                dialogs={props.state.DialogsPage}
+                Icon={props.state.Icon}
+                dispatch={props.dispatch}
               />
             }
           />
@@ -33,11 +34,9 @@ function App(props) {
             path='/profile'
             element={
               <Profile
-                profile={ProfilePage.Profile}
-                posts={ProfilePage.Posts}
-                addPost={props.addPost}
-                newPostText={ProfilePage.newPostText}
-                updateNewPostText={props.updateNewPostText}
+                profile={props.state.ProfilePage}
+                dispatch={props.dispatch}
+                Icon={props.state.Icon}
               />
             }
           />

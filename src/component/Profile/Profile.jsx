@@ -12,12 +12,12 @@ function Profile(props) {
           src='https://wallpapers.com/images/hd/1200x480-trippy-cloudy-galaxy-o884x4wppksi3lkw.jpg'
         />
       </div>
-      <ProfileInfo profile={props.profile} />
+      <ProfileInfo profile={props.profile.Profile} />
       <MyPost
-        posts={props.posts}
-        addPost={props.addPost}
-        newPostText={props.newPostText}
-        updateNewPostText={props.updateNewPostText}
+        posts={props.profile.Posts}
+        dispatch={props.dispatch}
+        newPostText={props.profile.newPostText}
+        buttonIcon={props.Icon.buttonIcon}
       />
     </div>
   );

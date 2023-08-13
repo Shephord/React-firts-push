@@ -4,13 +4,13 @@ const Message = (props) => {
   return (
     <div className={classes.dialogs_messages}>
       <div className={classes.message}>
-        <div className={classes.user}>
+        <ul className={classes.user}>
           <img className={classes.img} src={props.url} alt='user1Img' />
-          <div>user 1 {props.message}</div>
-        </div>
-        <div className={classes.user}>
-          <div>user 2 {props.message}</div>
-        </div>
+          <li>user 1 {props.message}</li>
+        </ul>
+        <ul className={classes.user}>
+          <li>user 2 {props.newMessage}</li>
+        </ul>
       </div>
     </div>
   );
