@@ -1,4 +1,4 @@
-import Store  from "./Redux/State";
+import Store  from "./Redux/Store";
 import reportWebVitals from "./reportWebVitals";
 import React from "react";
 import ReactDOM from "react-dom/client";

@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   addPostActionCreator,
   upDateNewPostMessage,
-} from "../../../Redux/State";
+} from "../../../Redux/ProfileReducer";
 
 function MyPost(props) {
   const [text, setText] = useState("");

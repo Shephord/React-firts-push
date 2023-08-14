@@ -7,12 +7,9 @@ import {
   faUserGroup,
   faPaperPlane,
 } from "@fortawesome/free-solid-svg-icons";
+import profileReducer from "./ProfileReducer";
+import dialogReducer from "./DialogReducer";
 
-const UP_DATE_NEW_POST_MESSAGE = "UP-DATE-NEW-POST-MESSAGE";
-const ADD_POST = "ADD-POST";
-
-const UP_DATE_NEW_MESSAGE_BODY = "UP-DATE-NEW-MESSAGE-BODY";
-const SEND_MESSAGE = "SEND-MESSAGE";
 
 let Store = {
   _state: {
@@ -117,72 +114,13 @@ let Store = {
   subscribe(observer) {
     this._callSubscriber = observer;
   },
-
-  _addPost() {
-    let rand = Math.floor(Math.random() * 300);
-
-    let newPost = {
-      like: rand,
-      message: this._state.ProfilePage.newPostText,
-      name: "Mops",
-    };
-    this._state.ProfilePage.Posts.push(newPost);
-    this._state.ProfilePage.newPostText = "";
-    this._callSubscriber(this._state);
-  },
-
-  _updateNewPostText(newText) {
-    this._state.ProfilePage.newPostText = newText;
-    this._callSubscriber(this._state);
-  },
-
-  _addMessage() {
-    let body = this._state.DialogsPage.newMessageBody;
-
-    this._state.DialogsPage.Messages.push({ id: 4, message: body });
-    this._state.DialogsPage.newMessageBody = "";
-    this._callSubscriber(this._state);
-  },
-  _updateNewMessage(body) {
-    this._state.DialogsPage.newMessageBody = body;
-    this._callSubscriber(this._state);
-  },
   dispatch(action) {
-    if (action.type === ADD_POST) {
-      this._addPost();
-    } else if (action.type === UP_DATE_NEW_POST_MESSAGE) {
-      this._updateNewPostText(action.newText);
-    } else if (action.type === SEND_MESSAGE) {
-      this._addMessage();
-    } else if (action.type === UP_DATE_NEW_MESSAGE_BODY) {
-      this._updateNewMessage(action.body);
-    }
+    this._state.ProfilePage = profileReducer(this._state.ProfilePage, action);
+    this._state.DialogsPage = dialogReducer(this._state.DialogsPage, action);
+    this._callSubscriber(this._state);
   },
 };
-export const addPostActionCreator = () => {
-  return {
-    type: ADD_POST,
-  };
-};
 
-export const upDateNewPostMessage = (text) => {
-  return {
-    type: UP_DATE_NEW_POST_MESSAGE,
-    newText: text,
-  };
-};
 
-export const sendMessageCreator = () => {
-  return {
-    type: SEND_MESSAGE,
-  };
-};
-
-export const upDateNewMessageBodyCreator = (body) => {
-  return {
-    type: UP_DATE_NEW_MESSAGE_BODY,
-    body: body,
-  };
-};
 
 export default Store;

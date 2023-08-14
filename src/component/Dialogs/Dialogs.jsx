@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   sendMessageCreator,
   upDateNewMessageBodyCreator,
-} from "../../Redux/State";
+} from "../../Redux/DialogReducer";
 
 function Dialogs(props) {
   const [text, setText] = useState("");
