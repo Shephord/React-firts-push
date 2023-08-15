@@ -16,8 +16,8 @@ function App(props) {
       <div className='app-wrapper'>
         <Header />
         <Nav
-          friends={props.state.nav.Friends}
-          item={props.state.nav.Item}
+          friends={props.state.Sidebar.Friends}
+          item={props.state.Sidebar.Item}
         />
         <Routes>
           <Route

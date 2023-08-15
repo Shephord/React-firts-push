@@ -1,27 +1,49 @@
 const UP_DATE_NEW_POST_MESSAGE = "UP-DATE-NEW-POST-MESSAGE";
 const ADD_POST = "ADD-POST";
+const initialState = {
+  Profile: {
+    name: "Andrei",
+    lasName: "Bunescu",
+    birthDay: "08/12/1994",
+    city: "Venice",
+    Education: `IPSEOA Andrea Barbarigo`,
+    WebSite: "https:/google.com",
 
-const profileReducer = (state, action) => {
+    profileImg:
+      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+  },
+  Posts: [
+    { like: "02", name: "Marta", message: "Hello, i lov pepsi" },
+    { like: "61", name: "Marina", message: "Hello  i'm from Italy" },
+    { like: "11", name: "Avrora", message: "Monday is a greet day " },
+    { like: "12", name: "Alma", message: "Monday is a greet day " },
+  ],
+  newPostText: "",
+};
+
+const profileReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_POST:
-      let rand = Math.floor(Math.random() * 300);
+      let rand = Math.floor(Math.random() * 300); // Random № of likes 
 
       let newPost = {
         like: rand,
         message: state.newPostText,
         name: "Mops",
       };
-      state.Posts.push(newPost);
-      state.newPostText = "";
-      break;
+      return {
+        ...state,
+        Posts: [...state.Posts, newPost],
+        newPostText: "",
+      };
     case UP_DATE_NEW_POST_MESSAGE:
-      state.newPostText = action.newText;
-      break;
+      return {
+        ...state,
+        newPostText: action.newText,
+      };
     default:
-      break;
+      return state;
   }
-
-  return state;
 };
 
 export default profileReducer;
