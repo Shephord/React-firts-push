@@ -25,13 +25,17 @@
   padding-top: 10px;
   padding-left: 10px;
 }
-.dialogs_button {
+.button {
   position: absolute;
   right: 12px;
   top: 3px;
   background: none;
   border: none;
   transition: background-color 0.3s;
+}
+.button_disable {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 .icon {
   width: 20px;
@@ -42,8 +46,11 @@
   transition: background-color ease 0.4s;
   transition: color ease 0.4s;
 }
-.icon_active {
+.icon_active{
   background-color: #00fc93;
   color: #ffffff;
   cursor: pointer;
+}
+.icon_disable {
+  color: #6b6a6a;
 }

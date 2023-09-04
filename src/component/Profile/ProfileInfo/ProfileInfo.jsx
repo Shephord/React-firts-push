@@ -1,10 +1,10 @@
+import { Provider, connect } from "react-redux";
 import classes from "./ProfileInfo.module.css";
 import ProfileInfoData from "./ProfileInfoData/ProfileInfoData";
 
-const ProfileInfo = (props) => {
-  const { profile } = props;
+const ProfileInfo = (profile) => {
   const { name, lasName, birthDay, city, Education, WebSite, profileImg } =
-    profile;
+    profile.profile;
   return (
     <div className={classes.profile}>
       <div>
@@ -24,4 +24,10 @@ const ProfileInfo = (props) => {
   );
 };
 
-export default ProfileInfo;
+const mapStateProps = (state) => {
+  return {
+    profile: state.ProfilePage.Profile,
+  };
+};
+
+export default connect(mapStateProps)(ProfileInfo);

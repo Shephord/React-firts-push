@@ -4,39 +4,47 @@ import Dialog from "./Dialog/Dialog";
 import Message from "./Message/Message";
 import { useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  sendMessageCreator,
-  upDateNewMessageBodyCreator,
-} from "../../Redux/DialogReducer";
 
 function Dialogs(props) {
   const [text, setText] = useState("");
+  const [sent, setSent] = useState(false);
   let newMessageElement = useRef("textarea");
+  let state = props.dialogsPage;
 
-  let dialogsElement = props.dialogs.Dialogs.map((dialog) => (
-    <Dialog name={dialog.name} id={dialog.id} url={dialog.url} />
+  let dialogsElement = state.Dialogs.map((dialog) => (
+    <Dialog
+      name={dialog.name}
+      id={dialog.id}
+      url={dialog.url}
+      key={dialog.id}
+    />
   ));
-  let messageElements = props.dialogs.Messages.map((messageData) => (
+  let messageElements = state.Messages.map((messageData) => (
     <Message
+      key={messageData.id}
       message={messageData.message}
       newMessage={messageData.newMessage}
       url={messageData.url}
     />
   ));
-  let newMessageBody = props.dialogs.newMessageBody
+
+  let newMessageBody = state.newMessageBody;
+
   const handleChange = (event) => {
-    let text = newMessageElement.current.value;
     setText(event.target.value);
-    onNewMessageCheng(text);
+    setSent(false);
+    onNewMessageCheng(event.target.value);
   };
 
   const onNewMessageCheng = (e) => {
-    let body = upDateNewMessageBodyCreator(e);
-    props.dispatch(body);
+    props.onNewMessageCheng(e);
   };
 
   const onSendMessageClick = () => {
-    props.dispatch(sendMessageCreator());
+    if (text.trim() !== "") {
+      props.onSendMessageClick();
+      setSent(true);
+    }
   };
 
   return (
@@ -62,14 +70,21 @@ function Dialogs(props) {
           <div>
             {" "}
             <button
-              className={`${classes.dialogs_button} ${
-                text ? classes.active : ""
+              className={`${classes.button} ${
+                !text.trim() || sent ? classes.button_disable : ""
               }`}
-              onClick={onSendMessageClick}
+              onClick={() => {
+                onSendMessageClick();
+                setSent(true);
+              }}
             >
               {" "}
               <FontAwesomeIcon
-                className={`${classes.icon} ${text ? classes.icon_active : ""}`}
+                className={`${classes.icon} ${
+                  !text.trim() || sent
+                    ? classes.icon_disable
+                    : classes.icon_active
+                }`}
                 icon={props.Icon.buttonIcon}
               />
             </button>

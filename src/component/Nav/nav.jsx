@@ -1,15 +1,17 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classes from "./nav.module.css";
 import { NavLink } from "react-router-dom";
-function Nav(props) {
+import { connect } from "react-redux";
+
+function Nav(navItems) {
   const setActive = ({ isActive }) => (isActive ? classes.activeLink : "");
   return (
     <nav className={classes.nav}>
-      {props.item.map((el, index) => (
+      {navItems.navItems.map((el, index) => (
         <div
           key={index}
           className={`${classes.item} ${
-            index === props.item.length - 1 ? classes.last : ""
+            index === navItems.navItems.length - 1 ? classes.last : ""
           }`}
         >
           {" "}
@@ -21,7 +23,7 @@ function Nav(props) {
 
       <div className={classes.friends}>
         <div className={classes.activeFriends}>
-          {props.friends.map((el) => (
+          {navItems.friendItems.map((el) => (
             <div key={el.name} className={classes.friend}>
               <img className={classes.img} src={el.imgUrl} alt='#' />
               <span>{el.name}</span>
@@ -32,5 +34,11 @@ function Nav(props) {
     </nav>
   );
 }
+const mapStateProps = (state) => {
+  return {
+    navItems: state.Sidebar.Nav,
+    friendItems: state.Sidebar.Friends,
+  };
+};
 
-export default Nav;
+export default connect(mapStateProps)(Nav);

@@ -25,7 +25,7 @@ const initialState = {
         "https://www.pngitem.com/pimgs/m/348-3481514_circle-profile-girl-hd-png-download.png",
     },
   ],
-  Item: [
+  Nav: [
     {
       pageUrl: "/profile",
       PageName: "Profile",
@@ -35,7 +35,9 @@ const initialState = {
     { pageUrl: "/news", PageName: "News", PageIcon: faNewspaper },
     { pageUrl: "/music", PageName: "Music", PageIcon: faMusic },
     { pageUrl: "/settings", PageName: "Settings", PageIcon: faGear },
+    { pageUrl: "/users", PageName: "User", PageIcon: faUserGroup },
     { pageUrl: "/friends", PageName: "Friends", PageIcon: faUserGroup },
+
   ],
 };
 const sidebarReducer = (state = initialState, action) => {

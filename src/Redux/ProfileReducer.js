@@ -32,9 +32,11 @@ const profileReducer = (state = initialState, action) => {
         name: "Mops",
       };
       return {
-        ...state,
+        ...state, // we create a state copy
         Posts: [...state.Posts, newPost],
-        newPostText: "",
+        //. in ..state.post we create a new array,and the newPost it's adding a new post in the end
+        // we don't cheng initial Post bt we create a copy and cheng the copy 
+        newPostText: "", 
       };
     case UP_DATE_NEW_POST_MESSAGE:
       return {

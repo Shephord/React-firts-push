@@ -1,0 +1,43 @@
+.content {
+  grid-area: content;
+  background-color: rgb(21, 22, 37);
+  color: #ff5e00;
+}
+
+.userPhoto {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
+
+.follow {
+  width: 70px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #ff5e00;
+  cursor: pointer;
+}
+.follow:hover {
+  color: #e9e5e5;
+  /* background-color: #08eb5f; */
+  box-shadow: 0px 0px 2px 2px #f76c1b;
+}
+.unfollow {
+  width: 70px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  color: #a1a1a1;
+  background-color: #3f3f3e;
+  cursor: pointer;
+}
+.unfollow:hover {
+  box-shadow: 0px 0px 2px 0px;
+}
+.currentPage {
+  cursor: not-allowed;
+  font-weight: 800;
+}
+.nexPage {
+  cursor: pointer;
+}
