@@ -1,4 +1,4 @@
-import { Provider, connect } from "react-redux";
+import { connect } from "react-redux";
 import {
   sendMessageCreator,
   upDateNewMessageBodyCreator,
@@ -9,15 +9,14 @@ import Dialogs from "./Dialogs";
 let mapStateProps = (state) => {
   return {
     dialogsPage: state.DialogsPage,
-    Icon: state.Icon
+    Icon: state.Icon,
   };
 };
 
 let mapDispatchToProps = (dispatch) => {
   return {
- 
     onNewMessageCheng: (e) => {
-      let action = upDateNewMessageBodyCreator(e)
+      let action = upDateNewMessageBodyCreator(e);
       dispatch(action);
     },
     onSendMessageClick: () => {

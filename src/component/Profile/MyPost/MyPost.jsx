@@ -4,9 +4,9 @@ import Post from "./Post/Post";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function MyPost(props) {
-  let postsElements = props.posts.map((post) => (
+  let postsElements = props.posts.map((post, idx) => (
     <Post
-      key={post.id}
+      key={idx}
       like={post.like}
       name={post.name}
       message={post.message}
