@@ -1,6 +1,6 @@
 import classes from "./Profile.module.css";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
-import MyPostContainer from "./MyPost/MyPostContainert";
+import MyPostContainer from "./MyPost/MyPostContainer";
 
 function Profile(props) {
   return (
