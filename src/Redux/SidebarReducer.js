@@ -37,7 +37,6 @@ const initialState = {
     { pageUrl: "/settings", PageName: "Settings", PageIcon: faGear },
     { pageUrl: "/users", PageName: "User", PageIcon: faUserGroup },
     { pageUrl: "/friends", PageName: "Friends", PageIcon: faUserGroup },
-
   ],
 };
 const sidebarReducer = (state = initialState, action) => {

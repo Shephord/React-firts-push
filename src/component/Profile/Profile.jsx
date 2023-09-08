@@ -12,7 +12,7 @@ function Profile(props) {
           src='https://wallpapers.com/images/hd/1200x480-trippy-cloudy-galaxy-o884x4wppksi3lkw.jpg'
         />
       </div>
-      <ProfileInfo />
+      <ProfileInfo profile={props.profile } />
       <MyPostContainer />
     </div>
   );

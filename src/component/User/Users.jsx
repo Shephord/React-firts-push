@@ -13,7 +13,7 @@ function Users(props) {
           <div key={idx}>
             <span>
               <div>
-               <NavLink to={'/profile' + u.id}> <img
+               <NavLink to={'/profile/' + u.id}> <img
                   className={classes.userPhoto}
                   src={
                     u.picture.large != null
@@ -76,8 +76,6 @@ function Users(props) {
               classes.nexPage
             }`}
             onClick={() => {
-              console.log("page:", page);
-              console.log("currentPage:", props.currentPage);
               props.onPageChanged(page);
             }}
           >

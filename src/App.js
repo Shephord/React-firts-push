@@ -3,7 +3,7 @@ import "./App.css";
 import DialogsContainer from "./component/Dialogs/DialogsContainer";
 import Header from "./component/Header/header";
 import Nav from "./component/Nav/nav";
-import Profile from "./component/Profile/Profile";
+import ProfileContainer from "./component/Profile/ProfileContainer";
 import News from "./component/News/News";
 import Music from "./component/Music/Music";
 import Settings from "./component/Settings/Settings";
@@ -18,7 +18,7 @@ function App(props) {
         <Nav />
         <Routes>
           <Route path='/dialogs/*' element={<DialogsContainer />} />
-          <Route path='/profile' element={<Profile />} />
+          <Route path='/profile' element={<ProfileContainer />} />
           <Route path='/news' element={<News />} />
           <Route path='/music' element={<Music />} />
           <Route path='/settings' element={<Settings />} />

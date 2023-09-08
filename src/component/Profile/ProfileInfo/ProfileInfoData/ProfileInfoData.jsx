@@ -1,5 +1,16 @@
 function ProfileInfoData(props) {
-  const { name, lasName, birthDay, city, Education, WebSite } = props;
+  const {
+    name,
+    lasName,
+    birthDay,
+    city,
+    Education,
+    WebSite,
+    country,
+    email,
+    cell,
+    age,
+  } = props;
   return (
     <>
       <h2>
@@ -10,9 +21,29 @@ function ProfileInfoData(props) {
           Birth Day: <span>{birthDay}</span>
         </div>
       )}
+       {age && (
+        <div>
+          Age: <span>{age}</span>
+        </div>
+      )}
       {city && (
         <div>
           City: <span>{city}</span>
+        </div>
+      )}
+      {country && (
+        <div>
+          Country: <span>{country}</span>
+        </div>
+      )}
+      {email && (
+        <div>
+          Email: <a href={WebSite}>{email}</a>
+        </div>
+      )}
+      {cell && (
+        <div>
+          Phone: <a href={WebSite}>{cell}</a>
         </div>
       )}
       {Education && (
@@ -30,4 +61,3 @@ function ProfileInfoData(props) {
 }
 
 export default ProfileInfoData;
-

@@ -17,12 +17,13 @@ class UserContainer extends Component {
       this.props.toggleIsFetching(true);
       axios
         .get(
-          `https://randomuser.me/api/1.4/?page=${this.props.currentPage}&results=${this.props.pageSize}`
+          `https://d-b1.onrender.com/users?_page=${this.props.currentPage}&_limit=${this.props.pageSize}`
+          //   `https://randomuser.me/api/1.4/?page=${this.props.currentPage}&results=${this.props.pageSize}`
         )
         .then((response) => {
           this.props.toggleIsFetching(false);
-          this.props.setUsers(response.data.results);
-          // this.props.setTotalUsersCount(response.data.results); // if i know how many users i have and i don't generate it
+          this.props.setUsers(response.data);
+          this.props.setTotalUsersCount(response.headers["x-total-count"]); // if i know how many users i have and i don't generate it
         });
     } catch (err) {
       console.log(` err : ${err}`);
@@ -33,19 +34,18 @@ class UserContainer extends Component {
     this.props.setCurrentPage(page);
     try {
       this.props.toggleIsFetching(true);
-    let api =   axios
+      axios
         .get(
-          `https://randomuser.me/api/1.4/?page=${page}&results=${this.props.pageSize}`
+          `https://d-b1.onrender.com/users?_page=${page}&_limit=${this.props.pageSize}`
+          // `https://randomuser.me/api/1.4/?page=${page}&results=${this.props.pageSize}`
         )
         .then((response) => {
           this.props.toggleIsFetching(false);
-            console.log(response.data.results[0].id.value);
-          this.props.setUsers(response.data.results);
-        });api.id = 1
+          this.props.setUsers(response.data);
+        });
     } catch (err) {
       console.log(` err : ${err}`);
     }
-    
   };
   render() {
     return (
@@ -71,14 +71,16 @@ function mapStateToProps(state) {
     totalUserCount: state.UsersPage.totalUserCount,
     currentPage: state.UsersPage.currentPage,
     isFetching: state.UsersPage.isFetching,
+  
   };
+  
 }
 
 export default connect(mapStateToProps, {
   follow,
-   unFollow,
-   setUsers,
-   setCurrentPage,
+  unFollow,
+  setUsers,
+  setCurrentPage,
   toggleIsFetching,
-  // setTotalUsersCount: setTotalUsersCountAC // if i know how many users i have and i don't generate it i use this 
+  setTotalUsersCount // if i know how many users i have and i don't generate it i use this
 })(UserContainer);
